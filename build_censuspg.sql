@@ -1,6 +1,6 @@
 -- Drop table
 
-DROP TABLE IF EXISTS census_raw.statespg
+DROP TABLE IF EXISTS census_raw.statespg;
 
 CREATE TABLE census_raw.statespg (
     gid serial NOT NULL,
@@ -32,11 +32,11 @@ WITH (
 CREATE INDEX statespg2_gix ON census_raw.statespg USING gist (shape_detailed) ;
 CREATE INDEX statespg_gix ON census_raw.statespg USING gist (shape_detailed) ;
 
-UPDATE TABLE census_raw.statespg OWNER TO sdrc_admins;
+ALTER TABLE census_raw.statespg OWNER TO sdrc_admins;
 
 -- Drop table
 
-DROP TABLE IF EXISTS census_raw.countiespg
+DROP TABLE IF EXISTS census_raw.countiespg;
 
 CREATE TABLE census_raw.countiespg (
     gid serial NOT NULL,
@@ -66,4 +66,4 @@ WITH (
 ) ;
 CREATE INDEX countiespg_gix ON census_raw.countiespg USING gist (shape_detailed) ;
 
-UPDATE TABLE census_raw.countiespg OWNER TO sdrc_admins;
+ALTER TABLE census_raw.countiespg OWNER TO sdrc_admins;
